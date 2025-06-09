@@ -330,9 +330,9 @@ public class Estudiante {
   public String metodo1() {
     // return "Respuesta 1";
     String salario = calcularSalario();
-	
-    return salario; 
-    
+    String respuesta = "EL salario que el estudiante ganaria como monitor seria de: " + salario;
+    return respuesta;
+
   }
 
   /**
@@ -344,39 +344,39 @@ public class Estudiante {
     return "Respuesta 2";
   }
 
-  public String calcularSalario(){
-	  
-	  double promedio = calcularPromedioEstudiante();
-	  int categoria;
-	  int salario = 0;
-	  
-	  if (semestre >= 1 && semestre <= 3) {
-		  categoria = 1;
-	  } else if (semestre >= 4 && semestre <= 7) {
-		  categoria = 2;
-	  } else {
-		  categoria = 3;
-	  }
-	  
-	  switch(categoria) {
-	  case 1:
-		  if (promedio >= 4.0) {
-			  salario = 25000;
-		  } else if(promedio <= 4.0) {
-			  salario = 15000;
-		  }
-		  break;
-	  case 2:
-		  if (promedio >= 4.5) {
-			  salario = 35000;
-		  } else if(promedio <= 4.5) {
-			  salario = 25000;
-		  }
-		  break;
-	  case 3:
-		  salario = 50000;
-		  break;
-	  }	  
-      return "$" + salario;
+  public String calcularSalario() {
+
+    double promedio = calcularPromedioEstudiante();
+    int categoria;
+    int salario = 0;
+
+    if (semestre >= 1 && semestre <= 3) {
+      categoria = 1;
+    } else if (semestre >= 4 && semestre <= 7) {
+      categoria = 2;
+    } else {
+      categoria = 3;
     }
+
+    switch (categoria) {
+      case 1:
+        if (promedio >= 4.0) {
+          salario = 25000;
+        } else if (promedio <= 4.0) {
+          salario = 15000;
+        }
+        break;
+      case 2:
+        if (promedio >= 4.5) {
+          salario = 35000;
+        } else if (promedio <= 4.5) {
+          salario = 25000;
+        }
+        break;
+      case 3:
+        salario = 50000;
+        break;
+    }
+    return "$" + salario;
+  }
 }
