@@ -182,7 +182,6 @@ public class Estudiante {
     double totalNota = 0.0;
     double totalCreditos = 0.0;
     double promedio = -1;
-
     if (curso1.estaCalificado() == true) {
       totalNota += (curso1.darNota() * curso1.darCreditos());
       totalCreditos += curso1.darCreditos();
@@ -341,7 +340,11 @@ public class Estudiante {
    * @return Respuesta 2.
    */
   public String metodo2() {
-    return "Respuesta 2";
+	double mejor_nota = MejorNota();
+	if (mejor_nota == 0.0) {
+		return "No se ha calificado nungun curso todavia";
+	}
+    return "La mejor nota del estudiante es: " + mejor_nota;
   }
 
   public String calcularSalario() {
@@ -378,5 +381,19 @@ public class Estudiante {
         break;
     }
     return "$" + salario;
+  }
+
+  public double MejorNota() {
+    Double[] notas = { curso1.darNota(), curso2.darNota(), curso3.darNota(), curso4.darNota() };
+    double nota_maxima = notas[0];
+    // se iniciar desde 1 porque estamos asumiendo que la nota maxima es el primer
+    // elemento
+    // ademas si el primero es cero y queda de mayor es porque los demas son cero
+    for (int i = 1; i < notas.length; i++) {
+    	if (notas[i] > nota_maxima) {
+            nota_maxima = notas[i];
+        }
+    }
+    return nota_maxima;
   }
 }
