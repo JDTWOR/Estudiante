@@ -94,7 +94,8 @@ public class Estudiante {
     nombre = "Jhon";
     apellido = "Rojas";
     codigo = 201612345;
-    semestre = 3;
+    int num_aleatorio = (int) (Math.floor(Math.random()*(10-1+1)+1));
+    semestre = num_aleatorio;
     curso1 = new Curso("ISIS1204", "APO1", 3, Departamento.SISTEMAS);
     curso2 = new Curso("MATE1203", "Cálculo diferencial", 3, Departamento.MATEMATICAS);
     curso3 = new Curso("FISI1100", "Física 1", 4, Departamento.FISICA);
