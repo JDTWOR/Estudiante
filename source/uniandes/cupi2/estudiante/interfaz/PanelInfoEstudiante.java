@@ -56,6 +56,8 @@ public class PanelInfoEstudiante extends JPanel
      * Etiqueta para la imagen.
      */
     private JLabel lblImagen;
+    
+    private JLabel lblSemestre;
 
     /**
      * Campo de texto donde se muestra el promedio.
@@ -76,6 +78,8 @@ public class PanelInfoEstudiante extends JPanel
      * Campo de texto donde se muestra el apellido.
      */
     private JTextField txtApellido;
+    
+    private JTextField txtSemestre;
 
     // -----------------------------------------------------------------
     // Constructores
@@ -89,7 +93,7 @@ public class PanelInfoEstudiante extends JPanel
         setLayout( new BorderLayout( ) );
 
         JPanel panelAux = new JPanel( );
-        panelAux.setLayout( new GridLayout( 4, 2 ) );
+        panelAux.setLayout( new GridLayout( 5, 2 ) );
         txtCodigo = new JTextField( );
         txtCodigo.setEditable( false );
         txtPromedio = new JTextField( );
@@ -98,15 +102,19 @@ public class PanelInfoEstudiante extends JPanel
         txtApellido.setEditable( false );
         txtNombre = new JTextField( );
         txtNombre.setEditable( false );
+        txtSemestre = new JTextField( );
+        txtSemestre.setEditable( false );
         lblPromedio = new JLabel( );
         lblCodigo = new JLabel( );
         lblNombre = new JLabel( );
         lblApellido = new JLabel( );
+        lblSemestre = new JLabel( );
 
         lblPromedio.setText( "Promedio:" );
         lblCodigo.setText( "Código:" );
         lblNombre.setText( "Nombre:" );
         lblApellido.setText( "Apellido:" );
+        lblSemestre.setText( "Semestre:" );
         panelAux.add( lblCodigo );
         panelAux.add( txtCodigo );
         panelAux.add( lblNombre );
@@ -115,6 +123,8 @@ public class PanelInfoEstudiante extends JPanel
         panelAux.add( txtApellido );
         panelAux.add( lblPromedio );
         panelAux.add( txtPromedio );
+        panelAux.add( lblSemestre );
+        panelAux.add( txtSemestre );
 
         lblImagen = new JLabel( );
         ImageIcon icono = new ImageIcon( "./data/estudiante.png" );
@@ -146,6 +156,7 @@ public class PanelInfoEstudiante extends JPanel
         txtCodigo.setText( pEstudiante.darCodigo( ) + "" );
         txtNombre.setText( pEstudiante.darNombre( ) );
         txtApellido.setText( pEstudiante.darApellido( ) );
+        txtSemestre.setText( pEstudiante.darSemestre( ) + "" ); 
     }
 
 }
